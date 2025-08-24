@@ -36,7 +36,7 @@ It supports managing books, borrowing records, and generating summaries of borro
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/library-management-api.git
+git clone https://github.com/SumsulArifin/library-management-system
 cd library-management-api
 ````
 

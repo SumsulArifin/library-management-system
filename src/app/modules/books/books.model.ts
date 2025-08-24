@@ -1,6 +1,5 @@
 import { model, Schema } from "mongoose";
 import { IBook } from "./books.interface";
-import generateISBN from "../../utils/generateISBN";
 
 const bookSchema = new Schema<IBook>(
   {
