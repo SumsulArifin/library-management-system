@@ -245,6 +245,6 @@ Response:
 
 ## 👨‍💻 Author
 
-Developed by **\[Md.Sumsul Arifin]**
+Developed by **\Md.Sumsul Arifin**
 
 ---
