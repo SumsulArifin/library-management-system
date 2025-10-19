@@ -10,6 +10,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://library-management-frontend-mu.vercel.app",
+      "https://library-management-system-frontend-azure-beta.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
