@@ -1,33 +1,28 @@
 import express, { Request, Response } from "express";
-import routes from "./app/routes";
 import cors from "cors";
+import routes from "./routes";
 
-const app = express();
+export const app = express();
 
-app.use(express.json());
-app.use(
+//middleware
+app.use([
   cors({
     origin: [
+      "https://l2-b5-library-management-client.vercel.app",
+      "https://library-management-mukit.vercel.app",
       "http://localhost:5173",
-      "https://library-management-frontend-mu.vercel.app",
-      "https://library-management-system-frontend-azure-beta.vercel.app",
     ],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
-  })
-);
+  }),
+  express.json(),
+]);
 
+//routes
 app.use(routes);
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Welcome to Library Management System.");
-});
-
-app.use((req, res, next) => {
-  res.status(404).json({
-    success: false,
-    message: `Route not found: ${req.originalUrl}`,
+  res.send({
+    success: true,
+    message: "This is Library Management System Server",
   });
-  next();
 });
-export default app;

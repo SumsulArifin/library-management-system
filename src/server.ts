@@ -1,17 +1,18 @@
-import { connect } from "mongoose";
-import config from "./app/config";
-import app from "./app";
+import mongoose from "mongoose";
+import { app } from "./app";
+import config from "./config";
 
-const port = config.port || 8080;
-
-(async function main() {
+const server = async () => {
   try {
-    await connect(config.mongodbUri as string);
-    console.log("✅ Database Connected to MongoDB.");
-    app.listen(port, () => {
-      console.log(`✅ Server is running on port: ${port}.`);
+    await mongoose.connect(config.database_url!);
+    console.log("Database connected successfully");
+    app.listen(config.port, () => {
+      console.log(`Server is running on http://localhost:${config.port}`);
     });
   } catch (error) {
-    console.log(error);
+    console.error("Database connection error:", error);
+    process.exit(1); // Exit the process with failure
   }
-})();
+};
+
+server();

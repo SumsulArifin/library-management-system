@@ -1,3 +1,5 @@
+import { Model } from "mongoose";
+
 export interface IBook {
   title: string;
   author: string;
@@ -11,5 +13,10 @@ export interface IBook {
   isbn: string;
   description?: string;
   copies: number;
-  available?: boolean;
+  available: boolean;
+  image: string;
+}
+
+export interface UpdateAvailabilityMethod extends Model<IBook> {
+  updateAvailability(id: string): void;
 }
