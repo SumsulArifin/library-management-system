@@ -8,8 +8,7 @@ export const app = express();
 app.use([
   cors({
     origin: [
-      "https://l2-b5-library-management-client.vercel.app",
-      "https://library-management-mukit.vercel.app",
+      "https://library-management-system-frontend-azure-beta.vercel.app",
       "http://localhost:5173",
     ],
     credentials: true,
